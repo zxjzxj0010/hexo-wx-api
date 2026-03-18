@@ -30,43 +30,35 @@ const ISAD = {
   "bannerId": 'adunit-c9dae21126085de9'
 };  // 是否开启广告
 
-const INDEXNAV = [{
-  id: '1',
-  name: '热门排行',
-  image: '../../static/icon/index/1.png',
-  url: '../hot/hot',
-  redirecttype: 'apppage',
-  appid: '',
-  extraData: ''
-},
-{
-  id: '5',
-  name: '搜索文章',
-  image: '../../static/icon/index/2.png',
-  url: '../discuss/discuss',
-  redirecttype: 'apppage',
-  appid: '',
-  extraData: ''
-},
-{
-  id: '7',
-  name: '问答讨论',
-  image: '../../static/icon/index/3.png',
-  url: '../feng/feng',
-  redirecttype: 'apppage',
-  appid: '',
-  extraData: ''
-},
-{
-  id: '10',
-  name: '关于我们',
-  image: '../../static/icon/index/4.png',
-  url: '../about/about',
-  redirecttype: 'apppage',
-  appid: '',
-  extraData: ''
-}
-];
+ const INDEXNAV = [
+//  {
+//   id: '5',
+//   name: '搜索文章',
+//   image: '../../static/icon/index/2.png',
+//   url: '../discuss/discuss',
+//   redirecttype: 'apppage',
+//   appid: '',
+//   extraData: ''
+// },
+// {
+//   id: '7',
+//   name: '问答讨论',
+//   image: '../../static/icon/index/3.png',
+//   url: '../list/list',
+//   redirecttype: 'apppage',
+//   appid: '',
+//   extraData: ''
+// },
+// {
+//   id: '10',
+//   name: '关于我们',
+//   image: '../../static/icon/index/4.png',
+//   url: '../about/about',
+//   redirecttype: 'apppage',
+//   appid: '',
+//   extraData: ''
+//  }
+ ];
 
 
 

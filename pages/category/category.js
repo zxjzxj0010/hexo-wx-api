@@ -13,6 +13,7 @@ const { config, Api, wxRequest } = appInst.globalData
 const { proxyImageList } = require('../../utils/imageProxy.js')
 let { getAd: ad } = config
 const imageProxyOptions = {
+  domain: config.getDomain,
   imageProxyPrefix: config.getImageProxyPrefix,
   proxyImageHosts: config.getImageProxyHosts,
   forceProxyAllRemote: config.getForceProxyAllRemote

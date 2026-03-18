@@ -3,6 +3,7 @@ const appInst = getApp();
 const { config, Api, wxRequest } = appInst.globalData
 const { proxyHtmlImageSrc } = require('../../utils/imageProxy.js')
 const imageProxyOptions = {
+  domain: config.getDomain,
   imageProxyPrefix: config.getImageProxyPrefix,
   proxyImageHosts: config.getImageProxyHosts,
   forceProxyAllRemote: config.getForceProxyAllRemote
@@ -42,8 +43,6 @@ Page({
           _this.setData({
             htmlText: articleData,
             author_d: {
-              name: config.getAuthorname,
-              img: config.getAuthorImg,
               domain: config.getDomain,
               webname: config.getWebsiteName
             },

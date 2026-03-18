@@ -7,6 +7,7 @@ const { config, Api, wxRequest } = appInst.globalData
 const { proxyImageList } = require('../../utils/imageProxy.js')
 let { webSiteName, getIndexNav:topNav, getAd:ad } = config;
 const imageProxyOptions = {
+  domain: config.getDomain,
   imageProxyPrefix: config.getImageProxyPrefix,
   proxyImageHosts: config.getImageProxyHosts,
   forceProxyAllRemote: config.getForceProxyAllRemote
@@ -187,9 +188,37 @@ Page({
     var url = e.currentTarget.dataset.url == null ? '' : e.currentTarget.dataset.url;
     var appid = e.currentTarget.dataset.appid == null ? '' : e.currentTarget.dataset.appid;
     var extraData = e.currentTarget.dataset.extraData == null ? '' : e.currentTarget.dataset.extraData;
+    const normalizeMiniProgramPath = (path) => {
+      if (!path) return '';
+      if (path.startsWith('/')) return path;
+      if (path.startsWith('../')) {
+        return `/pages/${path.replace(/^\.\.\//, '')}`;
+      }
+      if (path.startsWith('./')) {
+        return `/pages/${path.replace(/^\.\//, '')}`;
+      }
+      return `/pages/${path.replace(/^\//, '')}`;
+    };
+
+    const tabBarPages = [
+      '/pages/index/index',
+      '/pages/discuss/discuss',
+      '/pages/ball/ball',
+      '/pages/main/main'
+    ];
+
     if (redicttype == 'apppage') { //跳转到小程序内部页面         
-      wx.navigateTo({
-        url: url
+      const targetUrl = normalizeMiniProgramPath(url);
+      const navigator = tabBarPages.includes(targetUrl) ? wx.switchTab : wx.navigateTo;
+      navigator({
+        url: targetUrl,
+        fail: function (err) {
+          console.log(err);
+          wx.showToast({
+            title: '页面跳转失败',
+            icon: 'none'
+          })
+        }
       })
     } else if (redicttype == 'webpage') //跳转到web-view内嵌的页面
     {

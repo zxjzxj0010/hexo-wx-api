@@ -20,7 +20,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "今日在学",
+        "navigationBarTitleText": "Rubbish ｜ 落碑拾工作室",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
@@ -36,16 +36,16 @@
                 "text": "首页"
             },
             {
-                "pagePath": "pages/ball/ball",
-                "iconPath": "static/icon/tabar/list.png",
-                "selectedIconPath": "static/icon/tabar/list1.png",
-                "text": "列表"
-            },
-            {
                 "pagePath": "pages/discuss/discuss",
                 "iconPath": "static/icon/tabar/catelog.png",
                 "selectedIconPath": "static/icon/tabar/catelog_h.png",
                 "text": "排行"
+            },
+            {
+              "pagePath": "pages/ball/ball",
+              "iconPath": "static/icon/tabar/list.png",
+              "selectedIconPath": "static/icon/tabar/list1.png",
+              "text": "列表"
             },
             {
                 "pagePath": "pages/main/main",
