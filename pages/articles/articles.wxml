@@ -23,7 +23,7 @@
         </view>
       </view>
     </view>
-    <mp-html content="{{htmlText.content}}" preview-img />
+    <mp-html content="{{htmlText.content}}" preview-img error-img="/static/images/default_404_img.png" />
     <view class="footer_copyright">
       <view class="item_f">
         <text>文章作者:</text>

@@ -4,7 +4,13 @@
 // import config from '../../config/config.js'
 const appInst = getApp();
 const { config, Api, wxRequest } = appInst.globalData
+const { proxyImageList } = require('../../utils/imageProxy.js')
 let { webSiteName, getIndexNav:topNav, getAd:ad } = config;
+const imageProxyOptions = {
+  imageProxyPrefix: config.getImageProxyPrefix,
+  proxyImageHosts: config.getImageProxyHosts,
+  forceProxyAllRemote: config.getForceProxyAllRemote
+}
 // var domain = config.getDomain;
 Page({
   data: {
@@ -103,9 +109,10 @@ Page({
       .then(response => {
         // console.log(response);
         if (response.statusCode == '200' && response.data.length > 0) {
+          const postsShowSwiperList = proxyImageList(response.data, 'cover', imageProxyOptions)
           self.setData({
             displaySwiper: 'block',
-            postsShowSwiperList: response.data
+            postsShowSwiperList
           })
         } else {
           self.setData({
@@ -143,9 +150,10 @@ Page({
       .then(res => {
         // console.log(res);
         if (res.statusCode == 200) {
+          const list = proxyImageList(res.data.data, 'cover', imageProxyOptions)
           this.setData({
             pageCounts: res.data.pageCount,
-            postsList: [...this.data.postsList, ...res.data.data]
+            postsList: [...this.data.postsList, ...list]
           })
         } else {
           console.log('最后一页');

@@ -10,7 +10,13 @@
 // pages/category/category.js
 const appInst = getApp();
 const { config, Api, wxRequest } = appInst.globalData
+const { proxyImageList } = require('../../utils/imageProxy.js')
 let { getAd: ad } = config
+const imageProxyOptions = {
+  imageProxyPrefix: config.getImageProxyPrefix,
+  proxyImageHosts: config.getImageProxyHosts,
+  forceProxyAllRemote: config.getForceProxyAllRemote
+}
 Page({
 
   /**
@@ -44,13 +50,14 @@ Page({
     wxRequest.getRequest(Api.getCateDetail(options))
       .then(res => {
         if (res.statusCode == 200) {
+          const postlist = proxyImageList(res.data.postlist, 'cover', imageProxyOptions)
           const skeletonVisibleMap = this.data.skeletonVisibleMap
-          res.data.postlist.forEach(item => {
+          postlist.forEach(item => {
             skeletonVisibleMap[item.slug] = true
           });
           this.setData({
             title: res.data.name,
-            dataList: res.data.postlist,
+            dataList: postlist,
             skeletonVisibleMap
           })
         }

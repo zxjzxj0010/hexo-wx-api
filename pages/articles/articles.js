@@ -1,6 +1,12 @@
 // pages/articles/articles.js
 const appInst = getApp();
 const { config, Api, wxRequest } = appInst.globalData
+const { proxyHtmlImageSrc } = require('../../utils/imageProxy.js')
+const imageProxyOptions = {
+  imageProxyPrefix: config.getImageProxyPrefix,
+  proxyImageHosts: config.getImageProxyHosts,
+  forceProxyAllRemote: config.getForceProxyAllRemote
+}
 
 Page({
 
@@ -29,8 +35,12 @@ Page({
     wxRequest.getRequest(Api.getArticleDetail(e))
       .then(res => {
         if (res.statusCode == 200) {
+          const articleData = {
+            ...res.data,
+            content: proxyHtmlImageSrc(res.data.content, imageProxyOptions)
+          }
           _this.setData({
-            htmlText: res.data,
+            htmlText: articleData,
             author_d: {
               name: config.getAuthorname,
               img: config.getAuthorImg,
