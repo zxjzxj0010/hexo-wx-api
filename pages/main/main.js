@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-09-08 14:16:12
  * @LastEditors: Harry
  */
-import Notify from '../../miniprogram_npm/vant-weapp/notify/notify';
+import Notify from '@vant/weapp/notify/notify';
 
 // pages/main/main.js
 Page({

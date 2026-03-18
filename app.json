@@ -10,12 +10,12 @@
         "pages/ball/ball"
     ],
     "usingComponents": {
-        "van-search": "vant-weapp/search",
-        "van-tag": "vant-weapp/tag",
-        "van-divider": "vant-weapp/divider",
-        "van-notify": "vant-weapp/notify",
-        "van-icon": "vant-weapp/icon",
-        "van-button": "vant-weapp/button"
+        "van-search": "@vant/weapp/search/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-divider": "@vant/weapp/divider/index",
+        "van-notify": "@vant/weapp/notify/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-button": "@vant/weapp/button/index"
     },
     "window": {
         "backgroundTextStyle": "light",

@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "van-skeleton": "vant-weapp/skeleton"
+    "van-skeleton": "@vant/weapp/skeleton/index"
   },
   "navigationBarBackgroundColor": "#f6f6f6",
   "navigationBarTextStyle": "black",
