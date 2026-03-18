@@ -45,11 +45,16 @@
                 "packageJsonPath": "./package.json",
                 "miniprogramNpmDistDir": "./"
             }
-        ]
+        ],
+        "compileWorklet": false,
+        "localPlugins": false,
+        "condition": false,
+        "swc": false,
+        "disableSWC": true
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.3",
-    "appid": "wx9f9d24c0dbe1a2f2",
+    "appid": "wx989544a088cefc27",
     "projectname": "wx-hexo-api",
     "condition": {
         "search": {
@@ -74,5 +79,6 @@
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
-    }
+    },
+    "simulatorPluginLibVersion": {}
 }
