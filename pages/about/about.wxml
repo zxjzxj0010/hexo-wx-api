@@ -1,2 +1,32 @@
-<!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<!-- pages/about/about.wxml -->
+<view class="about-page">
+	<view class="bg-orb orb-a"></view>
+	<view class="bg-orb orb-b"></view>
+
+	<view class="hero-card">
+		<view class="brand-row">
+			<text class="brand-badge">ABOUT US</text>
+			<text class="brand-dot"></text>
+			<text class="brand-tag">轻松 · 有趣 · 有用</text>
+		</view>
+
+		<text class="title">{{title}}</text>
+		<text class="subtitle"></text>
+
+		<view class="slogen-wrap">
+			<image
+				class="slogen"
+				src="{{slogen}}"
+				mode="widthFix"
+				lazy-load="true"
+			/>
+		</view>
+	</view>
+
+	<view class="content-card">
+		<text class="section-title">我们在做什么</text>
+		<view class="desc-body">
+			<text class="desc-text">{{description}}</text>
+		</view>
+	</view>
+</view>

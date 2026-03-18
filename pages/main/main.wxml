@@ -32,11 +32,11 @@
   <!-- 底部设计开始 -->
   <view class="function_w">
     <view class="item_f">
+      <button class="feed" open-type="contact"></button>
       <view class="icon_i">
         <image class="" src="../../static/icon/main/kf.png" mode="widthFix"></image>
       </view>
       <view class="title_w">联系我们</view>
-      <button class="contact" open-type="contact"></button>
     </view>
     <view class="item_f">
       <button class="feed" open-type="feedback"></button>
@@ -63,9 +63,9 @@
   <!-- 遮罩层 -->
   <view class="mask_w" bindtap="closeLoginPopup"></view>
   <view class="login_w">
-    <view class="login-fr">
+    <!-- <view class="login-fr">
       <image mode="widthFix" class="login-img" src="../../static/images/login.png"></image>
-    </view>
+    </view> -->
     <view class="login-h">欢迎登入小程序</view>
     <view class="login-h-t">如果无法登录，请点击我的界面“清除缓存”后再登录</view>
     <van-divider dashed customStyle="margin:0 20rpx;" />

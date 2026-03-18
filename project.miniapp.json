@@ -1,0 +1,72 @@
+{
+  "miniVersion": "v2",
+  "name": "Rubbish",
+  "version": "0.0.1",
+  "versionCode": 100,
+  "i18nFilePath": "i18n",
+  "mini-ohos": {
+    "sdkVersion": "0.5.1"
+  },
+  "mini-android": {
+    "resourcePath": "miniapp/android/nativeResources",
+    "sdkVersion": "1.6.24",
+    "toolkitVersion": "0.11.0",
+    "useExtendedSdk": {
+      "media": false,
+      "bluetooth": false,
+      "network": false,
+      "scanner": false,
+      "xweb": false
+    },
+    "icons": {
+      "hdpi": "/Users/zxjzxj0010/Downloads/微信图片_20260303190025_2369_881.jpg",
+      "xhdpi": "/Users/zxjzxj0010/Downloads/微信图片_20260303190025_2369_881.jpg",
+      "xxhdpi": "/Users/zxjzxj0010/Downloads/微信图片_20260303190025_2369_881.jpg",
+      "xxxhdpi": "/Users/zxjzxj0010/Downloads/微信图片_20260303190025_2369_881.jpg"
+    },
+    "splashscreen": {
+      "hdpi": "",
+      "xhdpi": "",
+      "xxhdpi": ""
+    },
+    "enableVConsole": "open",
+    "privacy": {
+      "enable": true
+    },
+    "abi": {
+      "armeabi-v7a": true,
+      "arm64-v8a": true
+    }
+  },
+  "mini-ios": {
+    "sdkVersion": "1.6.28",
+    "toolkitVersion": "0.0.9",
+    "useExtendedSdk": {
+      "WeAppOpenFuns": true,
+      "WeAppNetwork": false,
+      "WeAppBluetooth": false,
+      "WeAppMedia": false,
+      "WeAppLBS": false,
+      "WeAppOthers": false
+    },
+    "enableVConsole": "open",
+    "icons": {
+      "mainIcon120": "",
+      "mainIcon180": "",
+      "spotlightIcon80": "",
+      "spotlightIcon120": "",
+      "settingsIcon58": "",
+      "settingsIcon87": "",
+      "notificationIcon40": "",
+      "notificationIcon60": "",
+      "appStore1024": ""
+    },
+    "splashScreen": {
+      "customImage": ""
+    },
+    "privacy": {
+      "enable": false
+    },
+    "enableOpenUrlNavigate": true
+  }
+}
