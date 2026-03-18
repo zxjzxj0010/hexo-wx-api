@@ -84,6 +84,12 @@ Page({
       }
     });
   },
+  // 跳转关于我们
+  goAbout() {
+    wx.navigateTo({
+      url: '/pages/about/about'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

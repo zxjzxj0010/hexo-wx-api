@@ -16,6 +16,7 @@
     </view>
   </view>
   <!-- 中部设计开始 -->
+  <!-- 
   <view class="mid_w_share">
     <view class="mid_item">
       <image class="" mode="widthFix" src="../../static/icon/main/ewm.png"></image>
@@ -27,13 +28,15 @@
       <button class="contact" open-type="contact"></button>
     </view>
   </view>
+  -->
   <!-- 底部设计开始 -->
   <view class="function_w">
     <view class="item_f">
       <view class="icon_i">
-        <image class="" src="../../static/icon/main/sc.png" mode="widthFix"></image>
+        <image class="" src="../../static/icon/main/kf.png" mode="widthFix"></image>
       </view>
-      <view class="title_w">我的收藏</view>
+      <view class="title_w">联系我们</view>
+      <button class="contact" open-type="contact"></button>
     </view>
     <view class="item_f">
       <button class="feed" open-type="feedback"></button>
@@ -42,11 +45,11 @@
       </view>
       <view class="title_w">问题反馈</view>
     </view>
-    <view class="item_f">
+    <view class="item_f" bindtap="goAbout">
       <view class="icon_i">
         <image class="" src="../../static/icon/main/ab.png" mode="widthFix"></image>
       </view>
-      <view class="title_w">关于程序</view>
+      <view class="title_w">关于我们</view>
     </view>
     <view class="item_f" bindtap="closeF">
       <view class="icon_i">
