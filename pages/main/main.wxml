@@ -63,6 +63,9 @@
   <!-- 遮罩层 -->
   <view class="mask_w" bindtap="closeLoginPopup"></view>
   <view class="login_w">
+    <view class="login-fr">
+      <image mode="widthFix" class="login-img" src="../../static/images/login.png"></image>
+    </view> 
     <view class="login-h">欢迎登入小程序</view>
     <view class="login-h-t">如果无法登录，请点击我的界面“清除缓存”后再登录</view>
     <van-divider dashed customStyle="margin:0 20rpx;" />
