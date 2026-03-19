@@ -30,19 +30,19 @@
         "backgroundColor": "#ffffff",
         "list": [
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/discuss/discuss",
                 "iconPath": "static/icon/tabar/home.png",
                 "selectedIconPath": "static/icon/tabar/home_h.png",
                 "text": "首页"
             },
             {
-                "pagePath": "pages/discuss/discuss",
+                "pagePath": "pages/ball/ball",
                 "iconPath": "static/icon/tabar/catelog.png",
                 "selectedIconPath": "static/icon/tabar/catelog_h.png",
-                "text": "排行"
+                "text": "词云"
             },
             {
-              "pagePath": "pages/ball/ball",
+              "pagePath": "pages/index/index",
               "iconPath": "static/icon/tabar/list.png",
               "selectedIconPath": "static/icon/tabar/list1.png",
               "text": "列表"
