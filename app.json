@@ -1,12 +1,12 @@
 {
     "pages": [
-        "pages/index/index",
+        "pages/discuss/discuss",
         "pages/main/main",
         "pages/articles/articles",
         "pages/list/list",
         "pages/category/category",
         "pages/about/about",
-        "pages/discuss/discuss",
+        "pages/index/index",
         "pages/ball/ball"
     ],
     "usingComponents": {

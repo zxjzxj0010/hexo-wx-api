@@ -1,43 +1,65 @@
-<van-search value="{{ key }}" bind:change="onSearchkey" placeholder="请输入搜索关键词" />
-<view class="search_res" wx:if="{{res_list.length!==0}}">
-  <scroll-view class="res_l_w" scroll-x="false" scroll-y bindscroll="">
-    <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item" data-slug="{{item.slug}}" bindtap="nav_page">
-      <view class="title_w">
-        <span class="t {{key==item1?'hightLight':''}}" wx:for="{{item.title}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1">
-          {{item1}}
-        </span>
+<view class="home_wrap">
+  <view class="hero_box">
+    <view class="hero_title">Rubbish文章数据查询工具</view>
+    <view class="hero_desc">快速检索与定位文章数据</view>
+  </view>
+
+  <van-search
+    class="hero_search"
+    field-class="hero_search_field"
+    input-class="hero_search_input"
+    value="{{ key }}"
+    bind:change="onSearchkey"
+    placeholder="请输入搜索关键词"
+    shape="round"
+    background="transparent"
+  />
+
+  <view class="search_res" wx:if="{{res_list.length!==0}}">
+    <scroll-view class="res_l_w" scroll-x="false" scroll-y bindscroll="">
+      <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item" data-slug="{{item.slug}}" bindtap="nav_page">
+        <view class="title_w">
+          <span class="t {{key==item1?'hightLight':''}}" wx:for="{{item.title}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1">
+            {{item1}}
+          </span>
+        </view>
+        <view class="cont_w">
+          <span class="t {{key==item2?'hightLight':'nohightLight'}}" wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2" wx:key="item2">
+            {{item2}}
+          </span>
+        </view>
+        <van-tag class="tag-b" color="#ffe1e1" text-color="#ad0000">{{item.slug}}</van-tag>
       </view>
-      <view class="cont_w">
-        <span class="t {{key==item2?'hightLight':'nohightLight'}}" wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2" wx:key="item2">
-          {{item2}}
-        </span>
+    </scroll-view>
+  </view>
+
+  <view class="search_history" wx:if="{{history_list.length!==0 && key.length===0}}">
+    <view class="title">历史搜索</view>
+    <view class="history_list">
+      <view class="history_item" wx:for="{{history_list}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+        <view class="history_content" bindtap="search_key" data-key="{{item}}">{{item}}</view>
       </view>
-      <van-tag class="tag-b" color="#ffe1e1" text-color="#ad0000">{{item.slug}}</van-tag>
     </view>
-  </scroll-view>
+    <view class="clear_all_button">
+      <view class="clear_wrap" bindtap="clearAllHistory">
+        <van-icon name="delete" />
+        <span>清空全部</span>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{key.length===0 || showEmptyState}}">
+    <view class="{{key.length===0 ? 'empty_state empty_state_tip' : 'empty_state'}}">
+      <image class="img_no_res" src="../../static/images/no-res.png" mode="widthFix"></image>
+      <view wx:if="{{key.length===0}}" class="empty_title empty_title_tip">请在搜索框里查找主题词</view>
+      <view wx:if="{{key.length!==0}}" class="empty_title">未检索到匹配结果</view>
+      <view class="empty_note">
+        本小程序个人自用工具，用于Rubbish 文章数据查询检索，方便个人快速查阅与整理自用数据，非公众资讯平台。
+      </view>
+      <view class="empty_note warn">
+        检索内容不代表小程序作者观点，请自行核查重要内容，否则产生的一切后果由用户自行承担，本平台不承担任何责任。
+      </view>
+    </view>
+  </block>
 </view>
-<view class="search_history" wx:if="{{history_list.length!==0}}">
-  <!-- 标题 -->
-  <view class="title">历史搜索</view>
-  <!-- 历史记录列表 -->
-  <view class="history_list">
-    <view class="history_item" wx:for="{{history_list}}" wx:for-index="index" wx:for-item="item" wx:key="item">
-      <!-- 历史记录内容 -->
-      <view class="history_content" bindtap="search_key" data-key="{{item}}">{{item}}</view>
-    </view>
-  </view>
-  <!-- 清空全部按钮 -->
-  <view class="clear_all_button">
-    <view class="clear_wrap" bindtap="clearAllHistory">
-      <van-icon name="delete" />
-      <span>清空全部</span>
-    </view>
-  </view>
-</view>
-<block wx:if="{{res_list.length==0}}">
-  <view class="container">
-    <image class="img_no_res" src="../../static/images/no-res.png" mode="widthFix"></image>
-    <view class="message">暂时没有搜索到</view>
-  </view>
-</block>
 <!-- <view class="footer_w" bindtap="Nav_a" data-con="1">©2021-Harry</view> -->

@@ -26,7 +26,8 @@ Component({
     allData: [],
     res_list: [],
     key: '',
-    history_list: []
+    history_list: [],
+    showEmptyState: false
   },
   // 进入页面就开始本地的请求
   lifetimes: {
@@ -63,12 +64,15 @@ Component({
       return str.replace(new RegExp(`${key}`, 'g'), `%%${key}%%`).split('%%')
     },
     onSearchkey(e) {
-      const value = e.detail.trim();
+      const rawDetail = e.detail;
+      const inputValue = typeof rawDetail === 'string' ? rawDetail : (rawDetail && rawDetail.value) || '';
+      const value = inputValue.trim();
 
       if (value.length === 0) {
         this.setData({
           res_list: [],
           key: value,
+          showEmptyState: false,
         });
         return;
       }
@@ -98,6 +102,7 @@ Component({
       this.setData({
         res_list,
         key: value.trim(),
+        showEmptyState: res_list.length === 0,
       });
     },
     // 获取json数据
